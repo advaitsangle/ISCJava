@@ -26,4 +26,4 @@ public class PrimeFactors{
         if(factors == 0)return true;
         return false;
     }
-} 
+}
