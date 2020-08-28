@@ -11,13 +11,16 @@ public class Jamcoin{
     }
 
     boolean jamCheck(int n){
-        int dec = binToDec(n);
-        int temp;
-        for(int i = 1; i<=10; i++){
-            if(primeCheck(decToBase(i, dec))) return false;
+        for(int i = 2; i<=10; i++){
+            System.out.println(i);
+            System.out.println(baseConvert(i, n));
+            System.out.println(primeCheck(baseConvert(i, n)));
+            if(primeCheck(baseConvert(i, n))) return false;
         }
-        if(binaryChecker(dec)==false) return false;
-        if(oneChecker(dec)==false) return false;
+        System.out.println("Binary Checker" + binaryChecker(n));
+        System.out.println("One Checker" + oneChecker(n));
+        if(binaryChecker(n)==false) return false;
+        if(oneChecker(n)==false) return false;
 
         return true;
     }
@@ -33,7 +36,7 @@ public class Jamcoin{
 
     boolean oneChecker(int n){
         String str=""+n;
-        if(str.charAt(0)=='1' && str.charAt(str.length()-1) == '0') {return true;}
+        if(str.charAt(0)=='1' && str.charAt(str.length()-1) == '1') {return true;}
         else return false;
     }
 
@@ -44,27 +47,15 @@ public class Jamcoin{
         if(factors == 0) return true;
         else return false;   
     }
-
-    int binToDec(int n){
-        int ans = 0, c=0;
-        while(n>0){
-            ans+=(n%10) * Math.pow(2,c);
-            n/=10;
-            c++;
-        }
-        return ans;
-    }
-
-    int decToBase(int base, int n){
-        String bin="";
-        int r;
-        while(n>0)
-        {
-            r=n%base;
-            bin=r+bin;
-            n/=base;
-        }
-        return Integer.parseInt(bin);
     
+    int baseConvert(int base, int n){
+        int sum=0, place=0;
+        while(n>0){
+            sum+= (n%10) * Math.pow(base,place);
+            place++;
+            n/=10;
+        }
+        return (sum);
     }
+   
 }
