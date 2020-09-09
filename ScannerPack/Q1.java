@@ -1,0 +1,20 @@
+ import java.util.*;
+class Q1
+{
+    public static void main()
+    {
+        String s,w;
+        Scanner sc1=new Scanner(System.in);
+        System.out.println("Enter a sentence ");
+        s=sc1.nextLine();                      
+        Scanner sc2=new Scanner(s);         
+        while(sc2.hasNext())                          
+        {                                      
+            w=sc2.next();                     
+            System.out.println(w.charAt(0));
+        }
+        
+        sc1.close();
+        sc2.close();
+    }
+}
