@@ -1,7 +1,7 @@
 import java.util.*;
 public class ArrayShuffle{
     int[] arr = new int[10];
-    String[] a  = {"ey", "ey", "ey", "harry", "ey", "ey", "ey", "ey", "ey", "ey"};
+    String[] a  = {"ey", "ey", "ey", "ey", "ey", "ey", "ey", "ey", "ey", "ey"};
     String word = "HarryPotte";
     public static void main(){
         Scanner sc = new Scanner(System.in);
