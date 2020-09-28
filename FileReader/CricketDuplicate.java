@@ -1,11 +1,16 @@
 import java.io.*;
 import java.util.*;
-class CricketRead
+class CricketDuplicate
 {
     public static void main(String args[]) throws IOException  
     {
         FileReader fr=new FileReader("Friends.Txt");
         BufferedReader br = new BufferedReader(fr);
+        
+        FileWriter fw=new FileWriter("Cricket.Txt",true);
+        BufferedWriter bw = new BufferedWriter(fw);
+        PrintWriter pw = new PrintWriter(bw);
+        
         String s,n;
         int r,i;
         double avg;
@@ -20,9 +25,12 @@ class CricketRead
                 r=Integer.parseInt(st.nextToken());
                 i=Integer.parseInt(st.nextToken());
                 avg=(double)r/i;
-                System.out.println(n+"\t"+r+"\t"+i+"\t\t"+avg);
+                
+                pw.println(n+"~"+r+"~"+i+"~"+avg);
+
             }
         }while(s!=null);   
         br.close();
+        pw.close();
     }
 }

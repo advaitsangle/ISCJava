@@ -1,6 +1,6 @@
 Harry~1200~10
 Ron~900~9
 Jacinda~840~12
-Karla~6000~30
+Ash~6000~30
 Mann~2000~10
 Jekyll~1212~12
